@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Roboto:wght@100;300&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&family=Roboto:wght@100;300;400&display=swap"
       rel="stylesheet"
     />
 
@@ -20,14 +20,14 @@
     <title>Statement - Cart Technical Test</title>
   </head>
   <body>
-    <header class="header container">
+    <header class="header">
       <img class="header__logo" src="/images/svg/logo.svg" alt="Bark Logo" />
-      <img class="header__bag" src="/images/svg/bag.svg" alt="Bag Icon" />
+      <i class="header__bag"> <span class="header__bag--count">2</span></i>
     </header>
     <main>
-      <section>
-        <h1>Ornare Vulputate Elit</h1>
-        <p>
+      <section class="landing container">
+        <h1 class="landing__title">Ornare Vulputate Elit</h1>
+        <p class="landing__description">
           Nullam quis risus eget urna mollis ornare vel eu leo. Fusce dapibus,
           tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum
           massa justo sit amet risus. Aenean lacinia bibendum nulla sed
@@ -35,14 +35,92 @@
           eros.
         </p>
       </section>
-      <section>
+      <section class="card__container">
         <div class="card">
-          <img src="" alt="" class="card__image" />
+          <img src="/images/png/chicken@2x.png" alt="" class="card__image" />
           <div class="card__title">Natures Menu Dog Food Can Chicken</div>
           <div class="card__price">£22.81</div>
-          <div class="card__cta button">Add to Bag</div>
+          <a class="card__cta button">Add to Bag</a>
         </div>
       </section>
     </main>
+    <div class="overlay"></div>
+    <section class="cart">
+      <div class="cart__top">
+        <h2>Your Bag</h2>
+        <i class="cart__close"></i>
+      </div>
+      <div class="cart__products">
+        <div class="product">
+          <img class="product__image" src="/images/png/chicken.png" alt="" />
+          <div class="product__description">
+            <div class="product__title">Natures Menu Dog Food Can Chicken</div>
+            <div class="product__price">£22.81</div>
+            <div class="product__remove">Remove</div>
+          </div>
+        </div>
+        <div class="product">
+          <img class="product__image" src="/images/png/chicken.png" alt="" />
+          <div class="product__description">
+            <div class="product__title">Natures Menu Dog Food Can Chicken</div>
+            <div class="product__price">£22.81</div>
+            <div class="product__remove">Remove</div>
+          </div>
+        </div>
+        <div class="product">
+          <img class="product__image" src="/images/png/chicken.png" alt="" />
+          <div class="product__description">
+            <div class="product__title">Natures Menu Dog Food Can Chicken</div>
+            <div class="product__price">£22.81</div>
+            <div class="product__remove">Remove</div>
+          </div>
+        </div>
+        <div class="product">
+          <img class="product__image" src="/images/png/chicken.png" alt="" />
+          <div class="product__description">
+            <div class="product__title">Natures Menu Dog Food Can Chicken</div>
+            <div class="product__price">£22.81</div>
+            <div class="product__remove">Remove</div>
+          </div>
+        </div>
+        <div class="product">
+          <img class="product__image" src="/images/png/chicken.png" alt="" />
+          <div class="product__description">
+            <div class="product__title">Natures Menu Dog Food Can Chicken</div>
+            <div class="product__price">£22.81</div>
+            <div class="product__remove">Remove</div>
+          </div>
+        </div>
+        <div class="product">
+          <img class="product__image" src="/images/png/chicken.png" alt="" />
+          <div class="product__description">
+            <div class="product__title">Natures Menu Dog Food Can Chicken</div>
+            <div class="product__price">£22.81</div>
+            <div class="product__remove">Remove</div>
+          </div>
+        </div>
+        <div class="product">
+          <img class="product__image" src="/images/png/chicken.png" alt="" />
+          <div class="product__description">
+            <div class="product__title">Natures Menu Dog Food Can Chicken</div>
+            <div class="product__price">£22.81</div>
+            <div class="product__remove">Remove</div>
+          </div>
+        </div>
+        <div class="product">
+          <img class="product__image" src="/images/png/chicken.png" alt="" />
+          <div class="product__description">
+            <div class="product__title">Natures Menu Dog Food Can Chicken</div>
+            <div class="product__price">£22.81</div>
+            <div class="product__remove">Remove</div>
+          </div>
+        </div>
+      </div>
+      <div class="cart__bottom">
+        <div class="cart__subtotal">Subtotal: £22.81</div>
+        <div class="cart__checkout">Proceed to Checkout</div>
+        <div class="cart__continue">Continue Shopping</div>
+      </div>
+    </section>
   </body>
 </html>

@@ -1,0 +1,144 @@
+@use "../util" as *;
+
+.overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.cart {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  width: 0%;
+  overflow-x: hidden;
+  height: 100%;
+  background-color: var(--white);
+  overflow-y: scroll;
+  transition: 0.6s;
+
+  @include breakpoint(large) {
+    max-width: 25%;
+    display: none;
+    transition: 0.6s;
+  }
+
+  @include breakpoint-down(small) {
+    max-width: 90%;
+    display: none;
+    transition: 0.6s;
+  }
+
+  &__top {
+    display: none;
+    flex-direction: row;
+    position: fixed;
+    top: 0;
+    right: 0;
+    justify-content: space-between;
+    padding: 0.5em;
+    border-bottom: solid 2px var(--grey-borders);
+    background-color: var(--white);
+    transition: 1s;
+
+    @include breakpoint(large) {
+      width: 25%;
+      display: none;
+    }
+
+    @include breakpoint-down(small) {
+      width: 90%;
+      display: none;
+    }
+
+    h2 {
+      font-weight: 500;
+      margin-left: rem(16);
+    }
+  }
+
+  &__close {
+    background: url("../../images/svg/close.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    width: 4%;
+    margin-top: rem(28);
+    margin-right: rem(22);
+    cursor: pointer;
+  }
+
+  &__bottom {
+    display: none; // flex
+    flex-direction: column;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    margin: auto;
+    justify-content: space-between;
+    border-top: solid 1px var(--grey-borders);
+    width: 0%;
+    background-color: var(--white);
+    transition: 1s;
+
+    @include breakpoint(large) {
+      width: 25%;
+    }
+
+    @include breakpoint-down(small) {
+      width: 90%;
+    }
+  }
+
+  &__subtotal {
+    font-size: rem(18);
+    margin: rem(20) 0;
+  }
+
+  &__checkout {
+    background-color: var(--orange);
+    color: var(--white);
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: rem(2);
+    font-family: var(--font-roboto);
+    font-size: rem(13);
+    border-radius: rem(24);
+    padding: rem(14);
+    width: 80%;
+    margin: auto;
+    margin-bottom: rem(22);
+  }
+
+  &__continue {
+    text-transform: uppercase;
+    text-decoration: underline;
+    text-underline-offset: rem(6);
+    width: 65%;
+    padding: rem(2);
+    padding-bottom: rem(6);
+    font-size: rem(14);
+    font-weight: 600;
+    letter-spacing: rem(2);
+    margin: auto;
+    font-family: var(--font-open-sans);
+    margin-bottom: rem(40);
+    cursor: pointer;
+  }
+
+  &__products {
+    height: 70.5%;
+    margin-top: 18%;
+    overflow-y: scroll;
+  }
+}

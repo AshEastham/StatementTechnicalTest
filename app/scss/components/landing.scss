@@ -1,0 +1,51 @@
+@use "../util" as *;
+
+main {
+  display: flex;
+  flex-direction: column;
+
+  @include breakpoint(large) {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.landing {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: rem(80);
+  margin-top: rem(40);
+
+  @include breakpoint(large) {
+    width: 50%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+  }
+
+  &__title {
+    font-size: rem(30);
+    font-weight: 500;
+    margin-bottom: rem(30);
+
+    @include breakpoint(large) {
+      font-size: rem(52);
+    }
+  }
+
+  &__description {
+    color: var(--grey-text);
+    max-width: rem(365);
+    font-size: rem(16);
+    line-height: 1.5;
+    margin: auto;
+
+    @include breakpoint(large) {
+      margin: 0 auto;
+      max-width: rem(480);
+      font-size: rem(18);
+    }
+  }
+}
