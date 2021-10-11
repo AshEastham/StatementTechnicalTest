@@ -17,6 +17,10 @@
     width: 30%;
     margin-left: rem(30);
 
+    @include breakpoint(medium) {
+      width: 14%;
+    }
+
     @include breakpoint(large) {
       width: 7%;
       margin: 0 rem(60);
@@ -45,8 +49,12 @@
       font-weight: 600;
       text-decoration: none;
 
+      @include breakpoint(medium) {
+        left: rem(7);
+        top: rem(7);
+      }
+
       @include breakpoint(large) {
-        position: relative;
         font-size: rem(14);
         top: rem(12);
         left: rem(10);

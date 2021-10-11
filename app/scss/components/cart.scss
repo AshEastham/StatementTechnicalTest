@@ -1,7 +1,7 @@
 @use "../util" as *;
 
 .overlay {
-  display: none;
+  display: flex;
   position: absolute;
   top: 0;
   left: 0;
@@ -9,13 +9,13 @@
   height: 100%;
   width: 100%;
   opacity: 0;
-  transition: 0.5s;
+  transition: 0.8s;
 }
 
 .cart {
   display: flex;
   flex-direction: column;
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 0;
   z-index: 1;
@@ -23,46 +23,67 @@
   overflow-x: hidden;
   height: 100%;
   background-color: var(--white);
-  overflow-y: scroll;
-  transition: 0.6s;
+  transition: 0.8s;
+
+  @include breakpoint-down(medium) {
+    max-width: 90%;
+  }
 
   @include breakpoint(large) {
     max-width: 25%;
-    display: none;
-    transition: 0.6s;
-  }
-
-  @include breakpoint-down(small) {
-    max-width: 90%;
-    display: none;
-    transition: 0.6s;
+    transition: 0.8s;
   }
 
   &__top {
-    display: none;
+    display: flex;
     flex-direction: row;
     position: fixed;
     top: 0;
+    width: 0%;
     right: 0;
     justify-content: space-between;
     padding: 0.5em;
     border-bottom: solid 2px var(--grey-borders);
     background-color: var(--white);
-    transition: 1s;
+    transition: 0.8s;
+    opacity: 0;
 
     @include breakpoint(large) {
-      width: 25%;
-      display: none;
+      max-width: 25%;
     }
 
-    @include breakpoint-down(small) {
-      width: 90%;
-      display: none;
+    @include breakpoint-down(medium) {
+      max-width: 90%;
     }
 
     h2 {
       font-weight: 500;
       margin-left: rem(16);
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    margin: auto;
+    justify-content: space-between;
+    border-top: solid 1px var(--grey-borders);
+    width: 0%;
+    background-color: var(--white);
+    transition: 0.8s;
+
+    @include breakpoint(large) {
+      max-width: 25%;
+      opacity: 0;
+    }
+
+    @include breakpoint-down(medium) {
+      max-width: 90%;
+      opacity: 0;
     }
   }
 
@@ -75,29 +96,6 @@
     margin-top: rem(28);
     margin-right: rem(22);
     cursor: pointer;
-  }
-
-  &__bottom {
-    display: none; // flex
-    flex-direction: column;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    text-align: center;
-    margin: auto;
-    justify-content: space-between;
-    border-top: solid 1px var(--grey-borders);
-    width: 0%;
-    background-color: var(--white);
-    transition: 1s;
-
-    @include breakpoint(large) {
-      width: 25%;
-    }
-
-    @include breakpoint-down(small) {
-      width: 90%;
-    }
   }
 
   &__subtotal {
@@ -137,8 +135,20 @@
   }
 
   &__products {
-    height: 70.5%;
-    margin-top: 18%;
+    height: 66%;
+    width: 100%;
+    margin-top: 23%;
     overflow-y: scroll;
+
+    @include breakpoint(medium) {
+      margin-top: 13%;
+      height: 72%;
+    }
+
+    @include breakpoint(large) {
+      margin-top: 18%;
+      height: 70%;
+      width: 100%;
+    }
   }
 }
